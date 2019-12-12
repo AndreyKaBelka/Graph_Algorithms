@@ -13,4 +13,4 @@ This application is an implementation of several popular graph algorithms.
 For each alg there is a task. It described if Task.doc file 
 
 ## Implementation
-The app was implement using JavaFX. Work with graphs was also implemented.
+The app was implemented using JavaFX. Work with graphs was also implemented.
