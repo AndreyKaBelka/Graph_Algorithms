@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="759.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <Pane id="topPanel" fx:id="topPane" prefHeight="36.0" prefWidth="1186.0" stylesheets="@../Styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="closeButton" fitHeight="30.0" fitWidth="30.0" layoutX="1153.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Close.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="main_menu" alignment="CENTER" prefHeight="723.0" prefWidth="1186.0" spacing="120.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="ostov_btn" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Оставные деревья">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="short_path" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Поиск кратчайшего пути">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="max_way_btn" mnemonicParsing="false" prefHeight="219.0" prefWidth="402.0" styleClass="a" stylesheets="@../Styles.css" text="Нахождение максимального пути с наименьшей стоимостью" textAlignment="CENTER" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </VBox>
+            <VBox fx:id="menu_3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="723.0" prefWidth="1186.0" spacing="120.0" visible="false">
+               <children>
+                  <Button fx:id="prima_btnm" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Прима">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="krask_btn" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Краскала">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="canvas_pane" layoutX="236.0" layoutY="162.0" prefHeight="733.0" prefWidth="1196.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <MenuBar fx:id="menubar" prefHeight="25.0" prefWidth="1192.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Алгоритм">
+                          <items>
+                              <MenuItem fx:id="kraskal_btn" mnemonicParsing="false" text="Краскала" />
+                            <MenuItem fx:id="prima_btn" mnemonicParsing="false" text="Прима" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Вернуться">
+                           <items>
+                              <MenuItem fx:id="back_menu" mnemonicParsing="false" text="Вернуться" />
+                           </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="falker_canv" prefHeight="733.0" prefWidth="1196.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <MenuBar fx:id="falk_bar" prefHeight="25.0" prefWidth="1193.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Алгоритм">
+                        <items>
+                          <MenuItem fx:id="falker_btn" mnemonicParsing="false" text="Выполнить" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Вернуться">
+                        <items>
+                          <MenuItem fx:id="back_btnmen" mnemonicParsing="false" text="Вернуться" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+            <VBox fx:id="menu_2" alignment="CENTER" prefHeight="723.0" prefWidth="1186.0" spacing="120.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="deikstra_btn" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Алгоритм Дейкстры">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="ford_btn" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Алгоритм Форда-Беллмана">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="floyd_btn" mnemonicParsing="false" styleClass="a" stylesheets="@../Styles.css" text="Алгоритм Флойда">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fx:id="graph" disable="true" fitHeight="400.0" fitWidth="952.0" layoutX="47.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../images/Graph.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="task" disable="true" fitHeight="264.0" fitWidth="592.0" layoutX="574.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../images/Task.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="answer" disable="true" layoutX="33.0" layoutY="497.0" visible="false">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="back" fitHeight="60.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" visible="false" x="15.0" y="15.0">
+               <image>
+                  <Image url="@../images/Back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
