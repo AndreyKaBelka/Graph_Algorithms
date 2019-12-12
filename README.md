@@ -10,7 +10,7 @@ This application is an implementation of several popular graph algorithms.
 6) Ford–Fulkerson alg;
 
 ## Task
-For each alg there is a task. It described if Task.doc file 
+For each alg there is a task. It described in Task.doc file 
 
 ## Implementation
 The app was implemented using JavaFX. Work with graphs was also implemented.
