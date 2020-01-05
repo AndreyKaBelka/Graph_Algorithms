@@ -313,7 +313,7 @@ public class Controller {
             Kraskal kraskal = new Kraskal(edges, i);
             ArrayList<Double> ans = kraskal.min_way();
             System.out.println(ans);
-            for(int i1 = 2; i1 < ans.size()-1;i1+=2){
+            for(int i1 = 0; i1 < ans.size()-2;i1+=2){
                 System.out.println(ans.get(i1) + " " + ans.get(i1+1));
                 Edge_Graph edge = getEdge(ans.get(i1)-1, ans.get(i1+1)-1);
                 if (edge != null) {
@@ -322,7 +322,7 @@ public class Controller {
             }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Ответ");
-            alert.setContentText("Максимальная длина кабеля:" + ans.get(0));
+            alert.setContentText("Максимальная длина кабеля:" + ans.get(ans.size()-2));
             alert.showAndWait();
         });
 

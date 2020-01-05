@@ -1,8 +1,6 @@
 package sample;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 class Kraskal {
     private ArrayList<Edge> edges;
@@ -10,6 +8,7 @@ class Kraskal {
 
     Kraskal(ArrayList<Edge> edges, int node) {
         this.edges = edges;
+        edges.forEach(edge -> System.out.println(edge.toString()));
         count_node = node;
     }
 
@@ -24,7 +23,7 @@ class Kraskal {
                 mass.add((double) edge.getU());
                 mass.add((double) edge.getV());
                 count++;
-                if (edge.getW() > max_w){
+                if (edge.getW() > max_w) {
                     max_w = edge.getW();
                 }
             }
@@ -64,12 +63,18 @@ class Edge {
 
     /**
      * Функция нужная для сортировки массива ребер
+     *
      * @param edge ребро с которым нужна сравнить данное ребро
      * @return -1 если вес данного ребра меньше введенного, 1 - если наоборот и 0 - если веса равны
      */
     int compareTo(Edge edge) {
         if (w != edge.w) return w < edge.w ? -1 : 1;
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + v + ";" + u + ";w=" + w + "}\n";
     }
 }
 
@@ -83,14 +88,28 @@ class Components {
     }
 
     boolean comp(Edge edge) {
-        return (array_comp.get(edge.getV()-1).equals(array_comp.get(edge.getU()-1)));
+        return (array_comp.get(edge.getV() - 1).equals(array_comp.get(edge.getU() - 1)));
     }
 
     void unite(Edge edge) {
-        if (array_comp.get(edge.getV()-1) < array_comp.get(edge.getU()-1)) {
-            array_comp.set(edge.getU()-1, array_comp.get(edge.getV()-1));
+        if (array_comp.get(edge.getV() - 1) < array_comp.get(edge.getU() - 1)) {
+            Integer prev = array_comp.get(edge.getU() - 1);
+            array_comp.set(edge.getU() - 1, array_comp.get(edge.getV() - 1));
+            for (int i = 0; i < array_comp.size(); i++) {
+                int val = array_comp.get(i);
+                if (val == (prev)){
+                    array_comp.set(i, array_comp.get(edge.getV() - 1));
+                }
+            }
         } else {
-            array_comp.set(edge.getV()-1, array_comp.get(edge.getU()-1));
+            Integer prev = array_comp.get(edge.getV() - 1);
+            array_comp.set(edge.getV() - 1, array_comp.get(edge.getU() - 1));
+            for (int i = 0; i < array_comp.size(); i++) {
+                int val = array_comp.get(i);
+                if (val == (prev)){
+                    array_comp.set(i, array_comp.get(edge.getU() - 1));
+                }
+            }
         }
     }
 }
