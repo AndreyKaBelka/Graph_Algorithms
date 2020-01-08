@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 class MyRunnable implements Runnable {
     private AnchorPane coords;
@@ -138,7 +137,7 @@ public class Controller {
     @FXML
     void initialize() throws IOException {
         //Считываем матрицу из файла
-        Globals.setMatrix("matrix.txt");
+        Globals.setMatrix();
         ArrayList<Coords> coords = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>();
         ArrayList<ArrayList<Double>> matrix = new ArrayList<>();

@@ -1,16 +1,15 @@
 package sample;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Globals {
+class Globals {
     private static ArrayList<ArrayList<Double>> matrix = new ArrayList<>();
 
-    static void setMatrix(String file_name) throws IOException {
-        FileReader fr = new FileReader(file_name);
+    static void setMatrix() throws IOException {
+        FileReader fr = new FileReader("matrix.txt");
         Scanner scan = new Scanner(fr);
         while (scan.hasNextLine()) {
             ArrayList<Double> arr = new ArrayList<>();
