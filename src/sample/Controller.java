@@ -374,7 +374,8 @@ public class Controller {
             try {
                 ArrayList<ArrayList<Integer>> falk_matrix = grounds[0].getMatrix();
                 Ford_Falkerson fordFalkerson = new Ford_Falkerson(falk_matrix, Ground.getMonstr_cell().getNumber(), falk_matrix.size() - 1);
-                System.out.println(fordFalkerson.max_pot());
+                answer.setVisible(true);
+                answer.setText("Ответ:\n" + fordFalkerson.max_pot());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -384,6 +385,7 @@ public class Controller {
             main_menu.setVisible(true);
             falker_canv.setVisible(false);
             clear_canv(falker_canv, falk_bar);
+            answer.setText("");
         });
 
         //кнопка назад
